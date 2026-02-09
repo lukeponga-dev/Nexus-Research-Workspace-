@@ -45,12 +45,13 @@ import * as DBService from './services/db';
 import * as GeminiService from './services/gemini';
 import * as SecurityService from './services/security';
 import { ChartRenderer } from './components/ChartRenderer';
+import { workspaceSettings } from './configs/workspace_settings.js'; // Import workspace settings
 
 function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [artifacts, setArtifacts] = useState<Artifact[]>([]);
   const [inputText, setInputText] = useState('');
-  const [mode, setMode] = useState<ReasoningMode>('pro');
+  const [mode, setMode] = useState<ReasoningMode>(workspaceSettings.default_model.includes('flash') ? 'flash' : 'pro'); // Initialize mode from settings
   const [activePhase, setActivePhase] = useState<ResearchPhase>('IDLE');
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -449,7 +450,7 @@ function App() {
                     
                     <div className={`max-w-[85%] md:max-w-2xl lg:max-w-3xl space-y-4 ${msg.role === 'user' ? 'items-end' : ''}`}>
                         {msg.type === 'research_card' ? (
-                            <div className="glass border border-aegis-accent/20 rounded-3xl p-6 shadow-2xl relative overflow-hidden group">
+                            <div className="glass border border-aegis-accent/20 rounded-3xl p-6 shadow-2xl relative overflow-hidden group text-[14px] sm:text-[15px] leading-relaxed text-zinc-200 font-sans prose prose-invert prose-sm max-w-none">
                                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
                                     <ClipboardCheck size={40} className="text-aegis-accent" />
                                 </div>
@@ -462,17 +463,15 @@ function App() {
                                         <span className="text-[8px] font-mono text-aegis-success uppercase">Grounding: Verified_98%</span>
                                     </div>
                                 </div>
-                                <div className="text-[14px] sm:text-[15px] leading-relaxed text-zinc-200 font-sans">
-                                    <ReactMarkdown className="prose prose-invert prose-sm max-w-none">{msg.text}</ReactMarkdown>
-                                </div>
+                                <ReactMarkdown>{msg.text}</ReactMarkdown>
                                 <div className="mt-6 flex justify-end gap-2">
                                     <button className="p-2 hover:bg-white/5 rounded-lg transition-colors text-zinc-500"><Share2 size={14} /></button>
                                     <button className="px-3 py-1 bg-aegis-accent/10 text-aegis-accent rounded-lg text-[9px] font-mono font-bold uppercase tracking-widest border border-aegis-accent/20">Archive Finding</button>
                                 </div>
                             </div>
                         ) : (
-                            <div className={`px-6 py-5 rounded-3xl text-[14px] sm:text-[15px] leading-relaxed border shadow-xl ${msg.role === 'user' ? 'bg-zinc-900 border-zinc-700 text-zinc-100 message-frame-user' : 'glass border-white/5 text-zinc-300 message-frame-model'}`}>
-                                <ReactMarkdown className="prose prose-invert prose-sm max-w-none" components={{
+                            <div className={`px-6 py-5 rounded-3xl text-[14px] sm:text-[15px] leading-relaxed border shadow-xl ${msg.role === 'user' ? 'bg-zinc-900 border-zinc-700 text-zinc-100 message-frame-user' : 'glass border-white/5 text-zinc-300 message-frame-model'} prose prose-invert prose-sm max-w-none`}>
+                                <ReactMarkdown components={{
                                     code({node, inline, className, children, ...props}: any) {
                                         const match = /language-(\w+)/.exec(className || '')
                                         return !inline && match ? (

@@ -1,0 +1,11 @@
+
+User
+ ↓
+Orchestrator (Gemini 3)
+ ├── Research Agent (Gemini 3)
+ │     ├── web_search
+ │     └── doc_loader
+ ├── Synthesis Agent (Gemini 3)
+ └── Memory Layer
+        ├── Research Log
+        └── Research Cards

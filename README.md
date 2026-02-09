@@ -1,12 +1,45 @@
+# NEXUS | Research Command Center
 
+NEXUS is a high-fidelity research substrate designed for complex synthesis and multi-perspective analysis. It leverages the **Gemini 3** intelligence layer to orchestrate a distributed agent model, transforming fragmented data into structured, decision-ready insights.
 
-# NEXUS: Distributed Multi-Agent Research Substrate
+## 🚀 Vision
+In the modern information landscape, the bottleneck is no longer access to data, but the **cognitive load of synthesis**. NEXUS acts as an intelligence force-multiplier, automating the "Research-Verify-Synthesize" loop through specialized agent roles.
 
-NEXUS is a fortified research environment designed to handle large-scale information synthesis using **Gemini 3** as an intelligence substrate. It moves beyond simple prompt-response patterns into an ongoing cognitive system utilizing a modular microservices architecture.
+## 🏗️ Technical Architecture
 
-## 🏗️ System Architecture
+### 1. Intelligence Layer (Substrates)
+NEXUS utilizes a multi-model routing strategy:
+- **Primary Orchestrator (Gemini 3 Pro):** Handles planning, task decomposition, and memory management.
+- **Specialized Agents (Gemini 3 Flash):** Optimized for high-throughput literature scanning, security validation, and drafting.
 
-Nexus operates on a distributed multi-agent model where each component is isolated and specialized.
+### 2. Distributed Agent Model
+The system simulates a micro-agent architecture within a unified workspace:
+- **LIT_AGENT:** Grounded web search and artifact ingestion.
+- **CRITIC:** Dialectical analysis and contradiction surfacing.
+- **SCRIBE:** Synthesis and memo generation.
+- **SEC_OPA:** Real-time OPA-inspired policy enforcement and prompt injection scanning.
 
-<!-- Updated with the provided image for a clearer architectural overview -->
-![NEXUS System Architecture](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0oAAAFkCAYAAADy5rG9AAAAAXNSR0IArs4c6QAAJGFJREFUeJzt3X+IHTeWx/HPYJtBvNtgF/kH2bJt04A12U5t05rK0/d2yWnSbrN0/k516tQJt02kTZLUNr/dJm03/2x/c6Zt2yaTLp1u02yT3aZt0xYQZpvm22Wbzf+r9eX5wZ1mN+/u/r0fJ1z2/P42M1l+b/v8n0QiiEQQCSQSiSAaQySQSA2CSCSDSAAQQSRQSA0CgUAggkggkRoEAgEEEEgkRoEAAggggUgkAQsgggAggkgoCQgggAggkggCciCAAgggggAgggggAgggggAgiggAggggAgiggAgggggAgiggAggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAg
+### 3. Secure Context Vault
+Persistent storage is handled via **IndexedDB**, creating a local-first "Memory Vault" where research artifacts (CSVs, MD, Images) are stored and injected into the Gemini context window dynamically.
+
+## 🛠️ Tech Stack
+- **Frontend:** React 19, Tailwind CSS
+- **Intelligence:** Google GenAI SDK (Gemini 3)
+- **Visualization:** Recharts (Dynamic CSV-to-Graph rendering)
+- **Security:** OPA Simulation & Gemini-based Input Validation
+- **Persistence:** IndexedDB (idb)
+
+## 📡 Key Features
+- **Grounding Integration:** Real-time web search integration via Gemini's Google Search tool.
+- **Thinking Mode:** High-budget reasoning for complex research queries using Gemini 3 Pro.
+- **Artifact Visualization:** Automatic detection and rendering of CSV data into interactive charts.
+- **Security Posture:** Real-time monitoring of agent load, system latency, and security validation status.
+
+## 📥 Getting Started
+1. Clone the repository.
+2. Ensure `process.env.API_KEY` is configured with a valid Google Gemini API Key.
+3. `npm install` and `npm start`.
+4. Use the "Import Demo Data" button in the sidebar to populate the context vault.
+
+---
+*NEXUS: Cognitive Synthesis at Scale.*

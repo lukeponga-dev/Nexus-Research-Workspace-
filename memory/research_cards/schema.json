@@ -1,0 +1,10 @@
+{
+  "title": "string",
+  "claim": "string",
+  "evidence": "string",
+  "sources": ["string"],
+  "confidence": "low | medium | high",
+  "tags": ["string"],
+  "created_at": "ISO-8601 timestamp",
+  "last_updated": "ISO-8601 timestamp"
+}

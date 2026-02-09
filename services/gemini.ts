@@ -1,6 +1,7 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 import { Artifact, Message, ReasoningMode } from "../types";
+import { workspaceSettings } from '../configs/workspace_settings.js'; // Import the new JS config
 
 const getClient = () => {
   return new GoogleGenAI({ apiKey: process.env.API_KEY });
@@ -34,7 +35,7 @@ export const generateResponse = async (
   lastUserMessage: string
 ): Promise<string> => {
   const ai = getClient();
-  const modelName = mode === 'pro' ? 'gemini-3-pro-preview' : 'gemini-3-flash-preview';
+  const modelName = mode === 'pro' ? 'gemini-3-pro-preview' : 'gemini-3-flash-preview'; // Using hardcoded models based on mode
   
   const contentParts: any[] = [];
 
@@ -74,6 +75,8 @@ export const generateResponse = async (
         systemInstruction: SYSTEM_INSTRUCTION,
         tools: tools.length > 0 ? tools : undefined,
         thinkingConfig: thinkingConfig,
+        temperature: workspaceSettings.temperature, // Use temperature from settings
+        maxOutputTokens: workspaceSettings.maxoutputtokens, // Use maxOutputTokens from settings
       }
     });
 
