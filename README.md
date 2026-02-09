@@ -1,11 +1,12 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 
-  <h1>Built with AI Studio</h2>
+# NEXUS: Distributed Multi-Agent Research Substrate
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+NEXUS is a fortified research environment designed to handle large-scale information synthesis using **Gemini 3** as an intelligence substrate. It moves beyond simple prompt-response patterns into an ongoing cognitive system utilizing a modular microservices architecture.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 🏗️ System Architecture
 
-</div>
+Nexus operates on a distributed multi-agent model where each component is isolated and specialized.
+
+<!-- Updated with the provided image for a clearer architectural overview -->
+![NEXUS System Architecture](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0oAAAFkCAYAAADy5rG9AAAAAXNSR0IArs4c6QAAJGFJREFUeJzt3X+IHTeWx/HPYJtBvNtgF/kH2bJt04A12U5t05rK0/d2yWnSbrN0/k516tQJt02kTZLUNr/dJm03/2x/c6Zt2yaTLp1u02yT3aZt0xYQZpvm22Wbzf+r9eX5wZ1mN+/u/r0fJ1z2/P42M1l+b/v8n0QiiEQQCSQSiSAaQySQSA2CSCSDSAAQQSRQSA0CgUAggkggkRoEAgEEEEgkRoEAAggggUgkAQsgggAggkgoCQgggAggkggCciCAAgggggAgggggAgggggAgiggAggggAgiggAgggggAgiggAggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAgiggAgggggAg

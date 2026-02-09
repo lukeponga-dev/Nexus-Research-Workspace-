@@ -1,0 +1,7 @@
+{
+  "name": "Nexus Research Workspace ",
+  "description": "Nexus Research Workspace transforms open-ended questions into decision-ready insights.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
